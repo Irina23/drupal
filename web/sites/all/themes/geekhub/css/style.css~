@@ -3,7 +3,7 @@
 /*----------------------------------------------------------------------------------*/
 html,body                       { width:100%; height:100%; }
 body                            { padding:0 0 10px; margin:0; font-size:12px; font-family:Arial, sans-serif; color:#4c7689; }
-div,p,a,span,em,strong,img,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,td,tr,form,fieldset,label,select,checkbox,input,textarea {
+div,p,a,span,em,strong,img,h1,h1,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,td,tr,form,fieldset,label,select,checkbox,input,textarea {
 	padding:0;
 	margin:0;
 	outline:none;
@@ -52,14 +52,14 @@ a:hover                        { text-decoration:none; }
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------WRAPPER--------------------------------------*/
 /*----------------------------------------------------------------------------------*/
-body.inner{
-    background:url("../images/header_bg.png")/*tpa=http://geekhub.ck.ua/images/header_bg.png*/ repeat-x top center #fff;
+#page-wrapper .inner #header{
+    background:url('/images/header_bg.png') repeat-x top center #fff;
 }
-body #header{
-    background:url("../images/header_bg.png")/*tpa=http://geekhub.ck.ua/images/header_bg.png*/ repeat-x center -342px  #fff;
+#page-wrapper #header{
+    background:url('/images/header_bg.png') repeat-x center -342px  #fff;
 }
 
-body span.line
+#page-wrapper span.line
 {
     display:block;
     width:100%;
@@ -68,8 +68,8 @@ body span.line
     clear:both;
     border-top:1px solid #8ea8b3;
 }
-#wrap {
-    width:901px;
+#page{
+    /*width:901px;*/
     overflow:visible;
     margin:0 auto;
     padding:0 0 80px;
@@ -78,7 +78,7 @@ body span.line
 /*-------------------------------------HEADER---------------------------------------*/
 /*----------------------------------------------------------------------------------*/
 #header {
-	position:relative;
+    position:relative;
     overflow:hidden;
     height:108px;
 }
@@ -113,7 +113,7 @@ body span.line
     background:url("../images/registration_button.png") no-repeat;
 	z-index:2;
 }
-#header > img {
+#header .inner > img {
     position:absolute;
 	top:165px;
 	left:225px;
@@ -170,7 +170,7 @@ body span.line
     color:#396375;
     text-transform:uppercase;
 }
-#header .menu  li a.active,#header .menu  li a.active, .inner #header .menu li a.active,#header .menu  li a:hover {
+#header .menu  li a.active,#header .menu  li a:hover, .inner #header .menu li a.active,#header .menu  li a:hover {
     color:#e21d5d;
 }
 
@@ -308,14 +308,14 @@ body span.line
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------CONTENT--------------------------------------*/
 /*----------------------------------------------------------------------------------*/
-#content {
+#main{
     overflow:hidden;
     padding:28px 0 40px;
 }
 #content > div {
     overflow:hidden;
 }
-#content h2 {
+#content h1 {
     font-family: "Trebuchet MS";
     font-weight:normal;
     font-size:50px;
@@ -327,27 +327,44 @@ body span.line
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------FOOTER---------------------------------------*/
 /*----------------------------------------------------------------------------------*/
-#wrap #footer {
+#page #footer {
     overflow:hidden;
     padding:17px 0 0;
     border-top:1px solid #a7c3cf;
 }
-#wrap #footer li {
-    width:50%;
+#page #footer li {
     float:left;
     text-align:right;
     font-size:10px;
     color:#a7c3cf;
-    font-family:arial;
+    font-family:Arial;
 }
-#wrap #footer li ul {
+#page #footer div.region-footer div{
+ width:50%;
+float:left;
+}
+#page #footer div.region-footer div#block-block-1 div.content{
+float:right;}
+
+#page #footer div.region-footer div.content{
+width:auto;}
+
+#page #footer div.region-footer div.content p{
+overflow:hidden;
+    text-align:right;
+    font-size:10px;
+    color:#a7c3cf;
+    font-family:Arial;
+}
+
+#page #footer  ul {
     overflow:hidden;
 }
-#wrap #footer li ul li {
+#page #footer ul li {
     width:auto;
     padding:0 21px 0 0;
 }
-#wrap #footer li ul li a {
+#page #footer ul li a {
 	display:block;
     height:12px;
     font-size:10px;
@@ -355,6 +372,14 @@ body span.line
     font-family: "Trebuchet MS";
     color:#396375;
     text-transform:uppercase;
+}
+
+#page #footer  li a.active,#page #footer li a:hover {
+    color:#e21d5d;
+}
+
+#page #footer h2{
+    display:none;
 }
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------HOME--------------------------------------*/
@@ -395,7 +420,7 @@ body span.line
 	margin-bottom:20px;
     width:406px;
 }
-#content .home ul.types li.left-col{
+#content .home ul.types li.views-row-odd{
     margin-right:40px;
 }
 #content .home ul.types li img {
@@ -410,6 +435,10 @@ body span.line
     line-height:27px;
     color: #EA2778;
 }
+
+#content #block-block-2 h2, #block-block-3 h2{
+display:none;}
+
 #content .home ul.types li p {
     overflow:hidden;
     margin:14px 0 0;
@@ -437,7 +466,7 @@ body span.line
 #content .home ul.social_share li.vk {
     margin:0 36px;
 }
-#content .home ul.social_share li ul {
+#content ul.social_share li ul {
     overflow:hidden;
 }
 #content .home ul.social_share li ul li {
@@ -543,6 +572,10 @@ text-indent:-999em;
     height:170px;
     padding:0 0 15px;
 }
+
+#content .team ul li.views-row-last{
+padding:0;
+}
 #content .team ul li div.views-field-field-post {
     float:right;
     width:185px;
@@ -618,7 +651,7 @@ text-indent:-999em;
 }
 
 #content .contacts dl dd.map {
-    height:300px;
+    height:288px;
     float:left;
     padding:17px 17px 17px 16px;
     background:url("../images/map.png")/*tpa=http://geekhub.ck.ua/images/map.png*/ no-repeat;
@@ -630,7 +663,9 @@ text-indent:-999em;
 #content .contacts dl dd {
     padding:0 0 30px;
 }
-
+#content .contacts dl dd.last {
+    padding:0;
+}
 #content .contacts dl h3 {
     text-align:center;
     padding:0px 0 12px;

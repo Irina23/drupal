@@ -31,8 +31,8 @@ body,
 .with-secondary-menu .region-header {
   margin-top: 3em;
 }
-.without-secondary-menu .region-header {
-  margin-top: 15px;
+/*.without-secondary-menu .region-header {
+  margin-top: 15px;*/
 }
 #secondary-menu {
   position: absolute;

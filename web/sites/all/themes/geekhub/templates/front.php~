@@ -188,9 +188,9 @@
 
     <div id="content" class="column"><div class="section">
  <div class="<?php if($_SERVER['REQUEST_URI'] == '/'){echo 'home';}
-            if(($_SERVER['REQUEST_URI'] == '/index.php/about') or ($_SERVER['REQUEST_URI'] == '/index.php/sertyfikovani-profesionaly')){echo 'about';}
-            if($_SERVER['REQUEST_URI'] == '/index.php/team'){echo 'team';}
-            if($_SERVER['REQUEST_URI'] == '/index.php/contacts'){echo 'contacts';}
+            if(($_SERVER['REQUEST_URI'] == '/about') or ($_SERVER['REQUEST_URI'] == '/sertyfikovani-profesionaly')){echo 'about';}
+            if($_SERVER['REQUEST_URI'] == '/team'){echo 'team';}
+            if($_SERVER['REQUEST_URI'] == '/contacts'){echo 'contacts';}
             ?>">
       <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
       <a id="main-content"></a>
@@ -223,7 +223,7 @@
       </div></div> <!-- /.section, /#sidebar-second -->
     <?php endif; ?>
 
-  </div></div> <!-- /#main, /#main-wrapper -->
+  </div></div> </div><!-- /#main, /#main-wrapper -->
 
   <?php if ($page['triptych_first'] || $page['triptych_middle'] || $page['triptych_last']): ?>
     <div id="triptych-wrapper"><div id="triptych" class="clearfix">

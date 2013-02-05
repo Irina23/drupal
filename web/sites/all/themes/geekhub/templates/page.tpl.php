@@ -85,10 +85,13 @@
  * @see html.tpl.php
  */
 ?>
-<div id="page-wrapper"><div id="page">
+
+<div id="page-wrapper"><div id="page" >
 
   <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>"><div class="section clearfix">
-
+<script type="text/javascript" src="../js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/stepcarousel.js"></script>
+    <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?34"></script>
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
@@ -184,6 +187,11 @@
     <?php endif; ?>
 
     <div id="content" class="column"><div class="section">
+ <div class="<?php if($_SERVER['REQUEST_URI'] == '/'){echo 'home';}
+            if(($_SERVER['REQUEST_URI'] == '/index.php/about') or ($_SERVER['REQUEST_URI'] == '/index.php/sertyfikovani-profesionaly')){echo 'about';}
+            if($_SERVER['REQUEST_URI'] == '/index.php/team'){echo 'team';}
+            if($_SERVER['REQUEST_URI'] == '/index.php/contacts'){echo 'contacts';}
+            ?>">
       <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
@@ -215,7 +223,7 @@
       </div></div> <!-- /.section, /#sidebar-second -->
     <?php endif; ?>
 
-  </div></div> <!-- /#main, /#main-wrapper -->
+  </div></div> </div><!-- /#main, /#main-wrapper -->
 
   <?php if ($page['triptych_first'] || $page['triptych_middle'] || $page['triptych_last']): ?>
     <div id="triptych-wrapper"><div id="triptych" class="clearfix">
