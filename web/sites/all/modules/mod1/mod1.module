@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Enables functions to be stored and executed at a later time.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function mod1_help($path, $arg) {
+  switch ($path) {
+      case "admin/help#mod1":
+          return '<p>' . t("Displays links to nodes created on this date") . '</p>';
+          break;
+  }
+}
+
+
+function mod1_block_info() {
+    $blocks['mod1_block_info'] = array(
+        'info' => t('mod1'), //The name that will appear in the block list.
+        'cache' => DRUPAL_CACHE_PER_ROLE, //Default
+    );
+  return $blocks;
+}
+
+function mod1_block_view($delta = '') {
+  switch($delta){
+      case 'mod1_block_info':
+          $block['subject'] = t('Module');
+         if(user_access('access content')){
+              //Retrieve and process data here.
+              $block['content'] =theme('verbose_method');
+          return $block;
+       }
+  }}
+
+function mod1_theme() {
+
+  return array(
+      'verbose_method' => array(
+          // шлях до файла шаблона weather.tpl.php
+          'template' => 'weather',
+          // змінні які будуть доступні в шаблоні
+          'arguments' => array(
+              'title' => null,
+              'body' => null,
+              'link' => null,
+          ),)
+      );
+
+}
+
